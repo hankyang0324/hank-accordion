@@ -1,0 +1,9 @@
+<div class='accordion_Div'>
+    <div class='title_Div' (click)='toggle.emit()' [ngClass]='{showContent:show==="expanded"}'>
+        {{ title }}
+    </div>
+    <div class='content_Div' [@divState]='show'>
+        <ng-content></ng-content>
+    </div>
+<div>
+  

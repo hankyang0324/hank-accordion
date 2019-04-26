@@ -1,0 +1,297 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "hank-accordion": {
+      "root": "projects/hank-accordion",
+      "sourceRoot": "projects/hank-accordion/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/hank-accordion/tsconfig.lib.json",
+            "project": "projects/hank-accordion/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hank-accordion/src/test.ts",
+            "tsConfig": "projects/hank-accordion/tsconfig.spec.json",
+            "karmaConfig": "projects/hank-accordion/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hank-accordion/tsconfig.lib.json",
+              "projects/hank-accordion/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "accordionTest": {
+      "root": "projects/accordionTest/",
+      "sourceRoot": "projects/accordionTest/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/accordionTest",
+            "index": "projects/accordionTest/src/index.html",
+            "main": "projects/accordionTest/src/main.ts",
+            "polyfills": "projects/accordionTest/src/polyfills.ts",
+            "tsConfig": "projects/accordionTest/tsconfig.app.json",
+            "assets": [
+              "projects/accordionTest/src/favicon.ico",
+              "projects/accordionTest/src/assets"
+            ],
+            "styles": [
+              "projects/accordionTest/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/accordionTest/src/environments/environment.ts",
+                  "with": "projects/accordionTest/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "accordionTest:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "accordionTest:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "accordionTest:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/accordionTest/src/test.ts",
+            "polyfills": "projects/accordionTest/src/polyfills.ts",
+            "tsConfig": "projects/accordionTest/tsconfig.spec.json",
+            "karmaConfig": "projects/accordionTest/karma.conf.js",
+            "styles": [
+              "projects/accordionTest/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/accordionTest/src/favicon.ico",
+              "projects/accordionTest/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/accordionTest/tsconfig.app.json",
+              "projects/accordionTest/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "accordionTest-e2e": {
+      "root": "projects/accordionTest-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/accordionTest-e2e/protractor.conf.js",
+            "devServerTarget": "accordionTest:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "accordionTest:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/accordionTest-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "accordion-test": {
+      "root": "projects/accordion-test/",
+      "sourceRoot": "projects/accordion-test/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/accordion-test",
+            "index": "projects/accordion-test/src/index.html",
+            "main": "projects/accordion-test/src/main.ts",
+            "polyfills": "projects/accordion-test/src/polyfills.ts",
+            "tsConfig": "projects/accordion-test/tsconfig.app.json",
+            "assets": [
+              "projects/accordion-test/src/favicon.ico",
+              "projects/accordion-test/src/assets"
+            ],
+            "styles": [
+              "projects/accordion-test/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/accordion-test/src/environments/environment.ts",
+                  "with": "projects/accordion-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "accordion-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "accordion-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "accordion-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/accordion-test/src/test.ts",
+            "polyfills": "projects/accordion-test/src/polyfills.ts",
+            "tsConfig": "projects/accordion-test/tsconfig.spec.json",
+            "karmaConfig": "projects/accordion-test/karma.conf.js",
+            "styles": [
+              "projects/accordion-test/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/accordion-test/src/favicon.ico",
+              "projects/accordion-test/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/accordion-test/tsconfig.app.json",
+              "projects/accordion-test/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "accordion-test-e2e": {
+      "root": "projects/accordion-test-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/accordion-test-e2e/protractor.conf.js",
+            "devServerTarget": "accordion-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "accordion-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/accordion-test-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "hank-accordion"
+}
