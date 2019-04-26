@@ -1,10 +1,9 @@
 {
   "name": "hank-accordion",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
-    "@angular/platform-browser/animations": "^7.1.0",
     "@angular/animations": "^7.1.0"
   },
   "main": "bundles/hank-accordion.umd.js",
@@ -19,5 +18,28 @@
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"
-  }
+  },
+  "description": "an accordion can expand and collapse for Angular",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankyang0324/hank-accordion.git"
+  },
+  "keywords": [
+    "accordion",
+    "angular",
+    "expand",
+    "collapse"
+  ],
+  "author": "Hank Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hankyang0324/hank-accordion/issues"
+  },
+  "homepage": "https://github.com/hankyang0324/hank-accordion#readme"
 }
