@@ -26,7 +26,7 @@ var HankSectionComponent = /** @class */ (function () {
                             transition('expanded <=> collapsed', animate(200))
                         ]),
                     ],
-                    styles: [".container{border-radius:3px;box-shadow:2px 2px 2px gray}.accordion_Div .title_Div{background-color:#ebebeb;border-bottom:1px solid #d3d3d3;padding:15px;cursor:pointer}.accordion_Div .title_Div:hover{color:#4169e1}.accordion_Div .content_Div{padding:15px;border-left:1px solid #ebebeb;overflow:hidden}.showContent{color:#4169e1}"]
+                    styles: [".container{border-radius:3px;box-shadow:3px 3px 3px gray}.accordion_Div .title_Div{background-color:#f0f0f0;border-bottom:1px solid #d3d3d3;padding:15px;cursor:pointer}.accordion_Div .title_Div:hover{color:#4169e1}.accordion_Div .content_Div{padding:15px;border-left:1px solid #f0f0f0;overflow:hidden}.showContent{color:#4169e1}"]
                 }] }
     ];
     HankSectionComponent.propDecorators = {
@@ -78,7 +78,7 @@ var HankAccordionComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'hank-accordion',
                     template: "<div class='container'><ng-content></ng-content></div>",
-                    styles: [".container{border-radius:3px;box-shadow:2px 2px 2px gray}.accordion_Div .title_Div{background-color:#ebebeb;border-bottom:1px solid #d3d3d3;padding:15px;cursor:pointer}.accordion_Div .title_Div:hover{color:#4169e1}.accordion_Div .content_Div{padding:15px;border-left:1px solid #ebebeb;overflow:hidden}.showContent{color:#4169e1}"]
+                    styles: [".container{border-radius:3px;box-shadow:3px 3px 3px gray}.accordion_Div .title_Div{background-color:#f0f0f0;border-bottom:1px solid #d3d3d3;padding:15px;cursor:pointer}.accordion_Div .title_Div:hover{color:#4169e1}.accordion_Div .content_Div{padding:15px;border-left:1px solid #f0f0f0;overflow:hidden}.showContent{color:#4169e1}"]
                 }] }
     ];
     HankAccordionComponent.propDecorators = {
